@@ -8,7 +8,7 @@ WORKDIR /challengerTest ./
 ADD . /app
 
 # Install the dependencies
-RUN pip install -r requirements.txt
+RUN cd /app && pip install -r requirements.txt
 
 # run the command to start uWSGI
 CMD ["uwsgi", "app.ini"]
