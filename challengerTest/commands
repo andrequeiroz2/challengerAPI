@@ -1,0 +1,24 @@
+
+
+#alternar entre ambientes de dev e test
+export CONFIGURATION_SETUP="config.TestingConfig"
+export CONFIGURATION_SETUP="config.DevelopmentConfig"
+
+
+#run app
+python app.py
+
+#testes unittest
+python -m unittest -v test_unit_task.py
+python -m unittest -v test_unit_user.py
+
+#coverage
+coverage run test_unit_task.py
+coverage run test_unit_user.py
+
+#coverage report
+coverage report test_unit_task.py
+coverage report test_unit_user.py
+
+#linter
+black ./
